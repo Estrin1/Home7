@@ -26,7 +26,7 @@ void FillArray(int[,] massive, int min, int max)
     Random rand = new Random();
     int rows = massive.GetLength(0);
     int columns = massive.GetLength(1);
-
+   
     for (int i = 0; i < rows; i++)
     {
         
@@ -60,13 +60,16 @@ void ArithmeticMean(int[,] massive)
 {
     int rows = massive.GetLength(0);
     int columns = massive.GetLength(1);
-
+      int count =0;
     for (int i = 0; i < columns; i++)
     { 
         double sred = 0;
-        for (int j = 0; j < rows; j++) sred+=massive[j, i];
-        
-        Console.WriteLine($"индекс колонки > {i}, среднее арифмитическое {sred / 2}");
+        for (int j = 0; j < rows; j++) 
+        {
+        sred+=massive[j, i];
+        count ++;
+        }
+        Console.WriteLine($"индекс колонки > {i}, среднее арифмитическое {Math.Round(sred / count,1)}");
     }
 
 }
